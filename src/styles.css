@@ -25,12 +25,44 @@ body {
 
 .weathercard{
   display: flex;
+  flex-direction: column;
   height: 80%;
   width: 40%;
-  max-width: 500px;
+  max-width: 20%;
+  min-width: fit-content;
   padding:20px;
   background-color: green;
 }
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex:1;
+}
+
+.temps, .other{
+  display: flex;
+  justify-content: space-around;
+
+  padding:30px;
+}
+
+.cell{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:15px;
+}
+
+
 
 .footer {
   display: flex;

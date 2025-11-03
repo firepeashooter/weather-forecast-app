@@ -1,4 +1,7 @@
 import "../styles.css";
 import { getWeatherData } from "./getData";
 
-getWeatherData("berlingermany");
+const location = "kingstonontario"
+
+const data = await getWeatherData(location);
+console.log(data);

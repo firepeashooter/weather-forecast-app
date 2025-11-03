@@ -15,8 +15,21 @@ body {
 }
 
 .body {
+  display: flex;
   flex: 4;
   background-color: lightblue;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.weathercard{
+  display: flex;
+  height: 80%;
+  width: 40%;
+  max-width: 500px;
+  padding:20px;
+  background-color: green;
 }
 
 .footer {

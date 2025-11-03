@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex: 0.5;
+  background-color: lightcoral;
+}
+
+.body {
+  flex: 4;
+  background-color: lightblue;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
+  background-color: lightgray;
+}

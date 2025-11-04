@@ -6,8 +6,15 @@ body {
   padding: 0;
 }
 
+.weathercard > p, 
+.weathercard > h1, 
+.weathercard > h2{
+  color:#b8c1ec;
+}
+
 .header {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   flex: 0.3;
@@ -26,13 +33,17 @@ body {
 .weathercard{
   display: flex;
   flex-direction: column;
-  height: 80%;
+  align-items: center;
+  height: 50%;
   width: 40%;
   max-width: 20%;
   min-width: fit-content;
   padding:20px;
-  background-color: green;
+  background-color: #1a1d35;
+  box-shadow: 3px 3px 10px;
+  border-radius: 5px;
 }
+
 
 .title{
   display: flex;

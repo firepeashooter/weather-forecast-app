@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+#city--search{
+  margin-bottom: 40px;
+}
+
 .weathercard > p, 
 .weathercard > h1, 
 .weathercard > h2{
@@ -23,11 +27,12 @@ body {
 
 .body {
   display: flex;
+  flex-direction: column;
   flex: 4;
   background-color: lightblue;
 
-  justify-content: center;
   align-items: center;
+  padding-top: 50px;
 }
 
 .weathercard{
@@ -38,6 +43,7 @@ body {
   width: 40%;
   max-width: 20%;
   min-width: fit-content;
+  min-height: auto;
   padding:20px;
   background-color: #1a1d35;
   box-shadow: 3px 3px 10px;

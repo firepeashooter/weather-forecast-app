@@ -9,20 +9,8 @@ const weatherCard = document.querySelector(".weathercard");
 
 const weatherForm = document.querySelector("#city--search");
 
-async function displayWeatherData(){
 
-    
-    const data = await getWeatherData(location);
-    populateWeatherCard(data);
-    
-
-    if (weatherCard.classList.contains("hidden")){
-        weatherCard.classList.remove("hidden");
-    } 
-}
-
-
-weatherForm.addEventListener("submit", (e) => {
+weatherForm.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
@@ -30,10 +18,25 @@ weatherForm.addEventListener("submit", (e) => {
     const inputValue = inputField.value;
 
     inputField.value = '';
+    
+    //Display the loading icon
 
-    displayWeatherData();
+    try {
+        const data = await getWeatherData(location);
+        populateWeatherCard(data);
+ 
+        if (weatherCard.classList.contains("hidden")){
+            weatherCard.classList.remove("hidden");
+        } 
 
-    //after this call we can do whatever we want while we wait for the async call to finish
+       
+    } catch (error) {
+       throw new Error(error); 
+
+    } finally{
+        //hide the loader
+    }
+
 
 
     //Error handeling/check if the input string is valid > 2 and maybe if it doesn't go through we send

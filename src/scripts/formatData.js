@@ -5,6 +5,7 @@ export async function formatWeatherData(data){
 
     const formattedData = {
 
+        location: data.resolvedAddress,
         temp: data.currentConditions.temp,
         feelsLike: data.currentConditions.feelslike,
         conditions: data.currentConditions.conditions,

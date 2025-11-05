@@ -31,12 +31,13 @@ export function populateWeatherCard(data){
     const windSpeedHeader = document.querySelector("#wind--speed");
 
     
+    //TODO: WE WANT TO FORMAT ALL OF THIS INFORMATION SO IT'S MORE PLEASING
     conditionHeader.textContent = data.conditions;
     locationHeader.textContent = data.location;
     tempHeader.textContent = data.temp;
-    feelsHeader.textContent = data.feelsLike;
-    humidityHeader.textContent = data.humidity;
-    windSpeedHeader.textContent = data.windSpeed;
+    feelsHeader.textContent = "Feels Like: " + data.feelsLike;
+    humidityHeader.textContent = "Humidity: " + data.humidity;
+    windSpeedHeader.textContent = "Wind: " + data.windSpeed;
 }
 
 

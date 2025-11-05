@@ -1,7 +1,6 @@
 import "../styles.css";
 import { getWeatherData, populateWeatherCard} from "./getData";
 
-const location = "kingstonontario"
 
 
 const weatherCard = document.querySelector(".weathercard");
@@ -15,10 +14,11 @@ weatherForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const inputField = document.querySelector("#city--input");
-    const inputValue = inputField.value;
+    const location = inputField.value;
 
     inputField.value = '';
     
+    //TODO: Add the functionalty for the loader
     //Display the loading icon
 
     try {
@@ -42,5 +42,4 @@ weatherForm.addEventListener("submit", async (e) => {
     //Error handeling/check if the input string is valid > 2 and maybe if it doesn't go through we send
     //the user an error to try again
 
-    alert(inputValue);
 })

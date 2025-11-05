@@ -20,4 +20,9 @@ export async function getWeatherData(location){
 }
 
 
+export function populateWeatherCard(data){
+    //this is where we update the data to the card
+}
+
+
    

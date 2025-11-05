@@ -1,15 +1,25 @@
 import "../styles.css";
-import { getWeatherData } from "./getData";
+import { getWeatherData, populateWeatherCard} from "./getData";
 
 const location = "kingstonontario"
 
-const data = await getWeatherData(location);
-console.log(data);
 
 const weatherCard = document.querySelector(".weathercard");
 
 
 const weatherForm = document.querySelector("#city--search");
+
+async function displayWeatherData(){
+
+    
+    const data = await getWeatherData(location);
+    populateWeatherCard(data);
+    
+
+    if (weatherCard.classList.contains("hidden")){
+        weatherCard.classList.remove("hidden");
+    } 
+}
 
 
 weatherForm.addEventListener("submit", (e) => {
@@ -21,10 +31,9 @@ weatherForm.addEventListener("submit", (e) => {
 
     inputField.value = '';
 
-    if (weatherCard.classList.contains("hidden")){
-        weatherCard.classList.remove("hidden");
-    }
+    displayWeatherData();
 
+    //after this call we can do whatever we want while we wait for the async call to finish
 
 
     //Error handeling/check if the input string is valid > 2 and maybe if it doesn't go through we send

@@ -1,45 +1,48 @@
 import "../styles.css";
-import { getWeatherData, populateWeatherCard} from "./getData";
-
-
+import { getWeatherData, populateWeatherCard } from "./getData";
 
 const weatherCard = document.querySelector(".weathercard");
 
-
 const weatherForm = document.querySelector("#city--search");
 
+const loader = document.querySelector(".loader");
 
 weatherForm.addEventListener("submit", async (e) => {
 
-    e.preventDefault();
+	//hide the weather card when we submit the form
+	weatherCard.classList.add("hidden");
 
-    const inputField = document.querySelector("#city--input");
-    const location = inputField.value;
+	e.preventDefault();
 
-    inputField.value = '';
-    
-    //TODO: Add the functionalty for the loader
-    //Display the loading icon
+	const inputField = document.querySelector("#city--input");
+	const location = inputField.value;
 
-    try {
-        const data = await getWeatherData(location);
-        populateWeatherCard(data);
- 
-        if (weatherCard.classList.contains("hidden")){
-            weatherCard.classList.remove("hidden");
-        } 
+	inputField.value = '';
 
-       
-    } catch (error) {
-       throw new Error(error); 
+	//TODO: Add the functionalty for the loader
+	//Display the loading icon
+	loader.classList.remove("hidden");
 
-    } finally{
-        //hide the loader
-    }
+	try {
+		const data = await getWeatherData(location);
+		populateWeatherCard(data);
+		loader.classList.add("hidden");
+
+		if (weatherCard.classList.contains("hidden")) {
+			weatherCard.classList.remove("hidden");
+		}
 
 
+	} catch (error) {
+		throw new Error(error);
 
-    //Error handeling/check if the input string is valid > 2 and maybe if it doesn't go through we send
-    //the user an error to try again
+	} finally {
+		//hide the loader
+	}
+
+
+
+	//Error handeling/check if the input string is valid > 2 and maybe if it doesn't go through we send
+	//the user an error to try again
 
 })

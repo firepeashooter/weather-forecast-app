@@ -11,6 +11,7 @@ export async function formatWeatherData(data){
         conditions: data.currentConditions.conditions,
         humidity: data.currentConditions.humidity,
         windSpeed: data.currentConditions.windspeed,
+	
     };
 
     return formattedData;

@@ -1,3 +1,10 @@
+:root {
+
+	--primary-color: #FFFFFF;
+	--secondary-color: #FFFFFF;
+
+}
+
 body {
 	display: flex;
 	flex-direction: column;
